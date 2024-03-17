@@ -1,0 +1,33 @@
+
+
+
+.regis_form{
+     border: 1px solid black;
+     padding: 10px;
+     margin: 100px auto;
+     width: 400px;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     border-radius: 4px;
+     
+
+
+}
+
+input{
+    padding: 8px;
+
+}
+
+button{
+    width: 60px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+.redBorder {
+    border-color: red;
+  }
+  

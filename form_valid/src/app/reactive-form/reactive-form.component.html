@@ -1,0 +1,33 @@
+
+
+<form [formGroup]="Signup_form" (ngSubmit)="handle_form()" class="regis_form">
+
+    <label for="username">Username:</label>
+    <input  formControlName="username"  type="text" placeholder="username">
+    <span style="color:red" *ngIf="uservaldtr && uservaldtr.invalid && uservaldtr.touched &&  uservaldtr.errors?.['required']" >username is required</span>
+    <span style="color:red" *ngIf="uservaldtr && uservaldtr.invalid && uservaldtr.errors?.['pattern'] && uservaldtr.touched" >username only take alphabet</span>
+ 
+    <label for="email">Email:</label>
+    <input formControlName="email" type="email" email placeholder="email" [ngClass]="{ 'redBorder': emailvalidr?.invalid && emailvalidr?.touched }">
+    <span style="color: red;" *ngIf="emailvalidr && emailvalidr.invalid &&  emailvalidr.touched && emailvalidr.errors?.['email']">valid email is required</span>
+
+    <label for="password">Password:</label>
+    <input formControlName="password"  type="password" placeholder="password" [ngClass]= "{'redBorder' : pasvald && pasvald.invalid && pasvald.touched}"  >
+
+
+    <input formControlName="confirmPassword" type="text" placeholder="comfirmPasssword" [ngClass]="{ 'redBorder': confirmvalid && confirmvalid.invalid && confirmvalid.touched}">
+
+
+
+    <span style="color: red;" *ngIf="formSubmitted && !pass_match() && confirmvalid?.touched">Password not matched</span>
+
+
+    <button [disabled] = "Signup_form.invalid">Submit</button>
+
+    
+</form>
+
+
+
+<!--  ?   optional chaining operators it allow us to obtain property of an object that may be null or undefined without causing an error when we 
+    use ? it checks the property bbefore it is null or undefined  avoid runtime error -->
