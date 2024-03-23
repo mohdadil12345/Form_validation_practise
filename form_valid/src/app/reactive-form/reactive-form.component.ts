@@ -19,6 +19,9 @@ export class ReactiveFormComponent {
     confirmPassword : new FormControl("", Validators.required)
 });
 
+
+
+
 formSubmitted : boolean = false 
 
 
@@ -69,28 +72,21 @@ handle_form() {
    return this.Signup_form.get('email')
  }
 
-
 //  password
 get pasvald () {
    return this.Signup_form.get("password")
 }
 
-
 // confirm_password  
-
-
 
 get confirmvalid() {
     return this.Signup_form.get("confirmPassword")
 }
 
-
-
 //  password match
 pass_match() : boolean {
   return this.Signup_form.value.password == this.Signup_form.value.confirmPassword;
 }
-
 
 
 }
